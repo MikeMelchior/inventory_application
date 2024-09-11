@@ -1,0 +1,39 @@
+<%- include('partials/header', { title: 'Add Car'}) %>
+
+<div>
+
+    <form action="/catalog/cars/create" method="post">
+        <label for="model">
+            <p>Model *</p>
+            <input type="text" name="model" id="model" maxlength="30" required>
+        </label>
+        <label for="owner">
+            <p>Owner *</p>
+            <input type="text" name="owner" id="owner" maxlength="30" required>
+        </label>
+        <label for="year">
+            <p>Year</p>
+            <input type="text" name="year" id="year" maxlength="40">
+        </label>
+        <label for="colour">
+            <p>Colour</p>
+            <input type="text" name="colour" id="colour" maxlength="30">
+        </label>
+
+        <p>* denotes required field</p>
+        <button type="submit">Add car to database</button>
+    </form>
+
+    <% if (locals.errors) { %>
+        <ul>
+            <% errors.forEach(e => { %>
+                <li>
+                    <%= e.message %>
+                </li>
+            <%}) %>
+        </ul>
+    <% } %>
+
+</div>
+
+<%- include('partials/footer') %>

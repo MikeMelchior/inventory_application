@@ -1,0 +1,150 @@
+/* :root {
+    --lightblue: rgb(146, 172, 249);
+    --blue: rgb(69, 115, 255)
+}
+
+body {
+    color: white;
+    margin: 0;
+    background-color: rgb(69, 115, 255);
+    font-size: 18px;
+    font-family: monospace;
+}
+
+header {
+    color:  white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+    margin-bottom: 96px;
+
+    nav {
+        display: flex;
+        font-size: 20px;
+        p {
+            padding: 0 16px;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            a:hover {
+                color: var(--lightblue);
+            }
+        }
+    }
+}
+
+form {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    button {
+        margin: 0;
+        padding: 8px 16px;
+    }
+}
+
+h2 {
+    padding: 16px;
+    margin: 16px 0;
+    text-shadow: 1px 1px black;
+}
+
+label {
+    display: flex;
+    gap: 8px;
+}
+
+input[type="text"] {
+    padding: 4px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    margin-top: auto;
+}
+
+footer > p {
+    width: fit-content;
+    margin-left: auto;
+    color: var(--lightblue);
+}
+
+.homenav {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.bigLink {
+        background-color: var(--lightblue);
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 16px 8px;
+        padding: 16px 16px;
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+        width: 100%;
+        height: 100%;
+}
+
+.bigLink:hover {
+    color: var(--blue);
+    transform: scale(1.02);
+}
+
+.car, 
+.model,
+.manufacturer {
+    background-color: var(--lightblue);
+    font-size: 20px;
+    padding: 16px;
+    margin: 32px auto;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    p {
+        padding: 4px 0;
+
+        b {
+            color: rgba(0, 0, 0, 0.64);
+        }
+    }
+    p:nth-child(2n) {
+        background-color: rgba(0, 0, 0, 0.15);
+    }    
+}
+
+
+
+.centered {
+    width: fit-content;
+    padding: 0 16px;
+    margin: 16px auto;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+} */

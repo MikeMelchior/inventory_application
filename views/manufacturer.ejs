@@ -1,0 +1,17 @@
+<%- include('partials/header', {title: 'Manufacturer Information'}) %>
+
+<div class="centered">
+    <% if (locals.manufacturer) { %>
+        <h2><%= manufacturer.name %></h2>
+        <p>Country: <%= manufacturer.country %></p>
+        <p>Website: <%= manufacturer.website %></p>
+        <p>Email: <%= manufacturer.email %></p>
+        <p>Description: <%= manufacturer.description %></p>
+        <a href="/catalog/manufacturers/update/<%= manufacturer.name %>">Update</a>
+    <% } else { %>
+        <h2>Manufacturer Not Found.</h2>
+        <a href="/catalog/manufacturers">Return to manufacturers</a>
+    <% } %>
+</div>
+            
+<%- include('partials/footer') %>

@@ -1,0 +1,31 @@
+<%- include('partials/header', {title: 'Manufacturer Database'}) %>
+
+<div>
+    
+    <% if (locals.manufacturers) { %>
+        <div class="centered">
+            <h2 class="textCenter">Manufacturer Database</h2>
+            <%- include('partials/bigLink', { link: "/catalog/manufacturers/search", text: "Search for a manufacturer"}) %>
+            <%- include('partials/bigLink', { link: "/catalog/manufacturers/create", text: "Add a manufacturer"}) %>
+        </div>
+        <div class="grid">
+            <% manufacturers.forEach(m => { %>
+                <div class="manufacturer">
+                    <h2><a href="/catalog/manufacturers/<%= m.name %>"><%= m.name %></a></h2>
+                    <p><b>Country:</b> <%= m.country %></p>
+                    <p><b>Website:</b> <%= m.website %></p>
+                    <p><b>Email:</b> <%= m.email %></p>
+                    <p><b>Description:</b> <%= m.description %></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <div class="centered">
+            <h2 class="textCenter">No Manufactures in the database.</h2>
+            <%- include('partials/bigLink', { link: "/catalog/manufacturers/search", text: "Search for a manufacturer"}) %>
+        </div>
+    <% } %>
+            
+</div>
+<%- include('partials/footer') %>
+            

@@ -1,0 +1,33 @@
+<%- include('partials/header', { title: `Model Database`}) %>
+
+<div>
+    <% if (locals.models) { %>
+        <div class="centered">
+            <h2 class="textCenter">Model Database</h2>
+            <%- include('partials/bigLink', { link: "/catalog/models/search", text: "Search for a model"}) %>
+            <%- include('partials/bigLink', { link: "/catalog/models/create", text: "Add a Model"}) %>
+        </div>
+        <div class="grid">
+            <% models.forEach(m => { %>
+                <div class="model">
+                    <h2 class="textCenter">
+                        <a href="/catalog/manufacturers/<%= m.make %>">
+                            <%= m.make %>
+                        </a>
+                        &nbsp;
+                        <a href="/catalog/models/<%= m.name %>">
+                            <%= m.name %>
+                        </a>
+                    </h2>
+                    <p>Make: <%= m.make %></p>
+                    <p>Zero to sixty: <%= m.zts %></p>
+                    <p>Horsepower: <%= m.hp %></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <h2 class="textCenter">No models in the database.</h2>
+        <%- include('partials/bigLink', { link: "/catalog/models/search", text: "Search for a model"}) %>
+    <% } %>
+</div>
+<%- include('partials/footer') %>

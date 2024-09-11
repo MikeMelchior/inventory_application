@@ -1,0 +1,11 @@
+<%- include('partials/header', { title: `Search Models`}) %>
+
+<form action="/catalog/models/search" method="post">
+    <label for="modelName">
+        <h2>Search database for model</h2>
+        <input type="text" name="modelName" id="modelName" max="255" placeholder="(enter model name)">
+    </label>
+    <button type="submit">Search</button>
+</form>
+
+<%- include('partials/footer') %>

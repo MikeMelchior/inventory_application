@@ -1,0 +1,34 @@
+<%- include('partials/header', { title: `Car Database`}) %>
+
+<div>
+    <% if (locals.cars) { %>
+        <div class="centered">
+            <h2 class="textCenter">Car Database</h2>
+            <%- include('partials/bigLink', { link: "/catalog/cars/search", text: "Search for a car"}) %>
+            <%- include('partials/bigLink', { link: "/catalog/cars/create", text: "Add a Car"}) %>
+        </div>
+        <div class="grid">
+            <% cars.forEach(c => { %>
+                <div class="car">
+                    <h2 class="textCenter">
+                        <a href="/catalog/manufacturers/<%= c.make %>">
+                            <%= c.make %>
+                        </a> 
+                        &nbsp;
+                        <a href="/catalog/models/<%= c.model %>">
+                            <%= c.model %>
+                        </a>
+                    </h2>
+                    <p><b>VIN: </b><%= c.vin %></p>
+                    <p><b>Year: </b><%= c.year %></p>
+                    <p><b>Colour: </b><%= c.colour %></p>
+                    <p><b>Owner: </b><%= c.owner %></p>
+                </div> 
+            <% }) %>
+        </div>
+    <% } else { %>
+        <h2>No cars in the database.</h2>
+    <%- include('partials/bigLink', { link: "/catalog/cars/search", text: "Search for a car"}) %>
+    <% } %>
+</div>
+<%- include('partials/footer') %>

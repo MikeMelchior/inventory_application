@@ -1,0 +1,43 @@
+<% const title = locals.vin == undefined ? "Car not found." : "Update car " + locals.vin %>
+<%- include('partials/header', { title: title }) %>
+
+<div>
+    <form action="/catalog/cars/update" method="post">
+        <label for="model">
+            <p>Model</p>
+            <input type="text" name="model" id="model" maxlength="30" readonly 
+                value="<%= locals.model == undefined ? "" : model %>">
+        </label>
+        <label for="make">
+            <p>Make *</p>
+            <input type="text" name="make" id="make" maxlength="30" readonly 
+                value="<%= locals.make == undefined ? "" : make %>">
+        </label>
+        <label for="owner">
+            <p>Owner</p>
+            <input type="text" name="owner" id="owner" maxlength="40" 
+                value="<%= locals.owner == undefined ? "" : owner %>">
+        </label>
+        <label for="year">
+            <p>Year</p>
+            <input type="text" name="year" id="year" maxlength="30" 
+                value="<%= locals.year == undefined ? "" : year %>">
+        </label>
+        <label for="colour">
+            <p>Colour</p>
+            <input type="text" name="colour" id="colour" maxlength="30" 
+                value="<%= locals.colour == undefined ? "" : colour %>">
+        </label>
+        <p>* denotes required field</p>
+        <% if (locals.errors) { %>
+            <ul>
+                <% errors.forEach(e => { %>
+                    <li><%= e %></li>
+                <% }) %>
+            </ul>
+        <% } %>
+        <button type="submit">Update car database</button>
+    </form>
+</div>
+
+<%- include('partials/footer') %>

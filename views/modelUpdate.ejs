@@ -1,0 +1,38 @@
+<% const title = locals.name == undefined ? "Model not found." : "Update " + locals.name %>
+<%- include('partials/header', { title: title}) %>
+
+<div>
+    <form action="/catalog/models/update" method="post">
+        <label for="name">
+            <p>Name</p>
+            <input type="text" name="name" id="name" maxlength="30" readonly 
+                value="<%= locals.name == undefined ? "" : name %>">
+        </label>
+        <label for="make">
+            <p>Make *</p>
+            <input type="text" name="make" id="make" maxlength="30" required 
+                value="<%= locals.make == undefined ? "" : make %>">
+        </label>
+        <label for="zts">
+            <p>Zero to sixty:</p>
+            <input type="text" name="zts" id="zts" maxlength="40" 
+                value="<%= locals.zts == undefined ? "" : zts %>">
+        </label>
+        <label for="hp">
+            <p>Horsepower</p>
+            <input type="text" name="hp" id="hp" maxlength="30" 
+                value="<%= locals.hp == undefined ? "" : hp %>">
+        </label>
+        <p>* denotes required field</p>
+        <% if (locals.errors) { %>
+            <ul>
+                <% errors.forEach(e => { %>
+                    <li><%= e %></li>
+                <% }) %>
+            </ul>
+        <% } %>
+        <button type="submit">Update model database</button>
+    </form>
+</div>
+
+<%- include('partials/footer') %>

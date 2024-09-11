@@ -1,0 +1,13 @@
+<%- include('partials/header', {title: 'Inventory Application'}) %>
+
+<script>
+    document.querySelector('header>nav').style.display = 'none';
+</script>
+
+<nav class="homenav textCenter">
+    <%- include('partials/bigLink', { link: "/catalog/cars", text: "Cars"}) %>
+    <%- include('partials/bigLink', { link: "/catalog/models", text: "Models"}) %>
+    <%- include('partials/bigLink', { link: "/catalog/manufacturers", text: "Manufacturers"}) %>
+</nav>
+
+<%- include('partials/footer') %>

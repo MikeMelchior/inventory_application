@@ -1,0 +1,29 @@
+<%- include('partials/header', { title: `Car Information`}) %>
+<div class="centered">
+
+    <% if (locals.car) { %>
+        <h2>Information about car <%= car.vin %>.</h2>
+        <ul>
+            <li>
+                <p>Model: <%= car.model %></p>
+            </li>
+            <li>
+                <p>Current Owner: <%= car.owner %></p>
+            </li>
+            <li>
+                <p>Year: <%= car.year %></p>
+            </li>
+            <li>
+                <p>Colour: <%= car.colour %>
+                </p>
+            </li>
+        </ul>
+        
+    <% } else { %>
+        <% console.log("Error: no car found.") %>
+    <h3>Car not found.</h3>
+    <% } %>
+    <%- include('partials/bigLink', { link: "/catalog/cars/search", text: "Return to search"}) %>
+</div>
+<%- include('partials/footer') %>
+        

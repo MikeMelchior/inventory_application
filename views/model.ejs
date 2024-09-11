@@ -1,0 +1,25 @@
+<%- include('partials/header', { title: `Model Information`}) %>
+
+<% if (locals.model) { %>
+    <div class="centered">
+        <h2><%= model.make %> <%= model.name %></h2>
+        <ul>
+            <li>
+                <p>
+                    <%= model.hp %> horsepower
+                </p>
+            </li>
+            <li>
+                <p>
+                    Zero to sixty in <%= model.zts %> seconds
+                </p>
+            </li>
+        </ul>
+    </div>
+<% } else { %>
+    <div class="centered">
+        <h3>Model not found</h3>
+    </div>
+<% } %>
+    <a href="/catalog/models/search">Return to search</a>
+<%- include('partials/footer') %>

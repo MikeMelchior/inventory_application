@@ -1,0 +1,45 @@
+<% const title = locals.name == undefined ? "Manufacturer not found" : "Update " + locals.name %>
+<%- include('partials/header', { title: title }) %>
+
+<div>
+    <form action="/catalog/manufacturers/update" method="post">
+        <label for="name">
+            <p>Name</p>
+            <input type="text" name="name" id="name" maxlength="30" readonly 
+                value="<%= locals.name == undefined ? "" : name %>">
+        </label>
+        <label for="country">
+            <p>Country *</p>
+            <input type="text" name="country" id="country" maxlength="30" required 
+                value="<%= locals.country == undefined ? "" : country %>">
+        </label>
+        <label for="website">
+            <p>Website</p>
+            <input type="text" name="website" id="website" maxlength="40" 
+                value="<%= locals.website == undefined ? "" : website %>">
+        </label>
+        <label for="email">
+            <p>Email</p>
+            <input type="text" name="email" id="email" maxlength="30" 
+                value="<%= locals.email == undefined ? "" : email %>">
+        </label>
+        <label for="description">
+            <p>Description</p>
+            <textarea type="text" name="description" id="description" maxlength="200" rows="10"><%= locals.description == undefined ? "" : description %></textarea>
+        </label>
+
+        <p>* denotes required field</p>
+        <% if (locals.errors) { %>
+            <ul>
+                <% errors.forEach(e => { %>
+                    <li><%= e %></li>
+                <% }) %>
+            </ul>
+        <% } %>
+        <button type="submit">Update manufacturer database</button>
+    </form>
+
+
+</div>
+
+<%- include('partials/footer') %>
